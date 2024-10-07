@@ -1,5 +1,5 @@
 import User from "../Model/userModel.js";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
 
@@ -162,7 +162,7 @@ export const loginUser = async (req, res) => {
                 success: true,
                 withoutPassUser,
             });
-            
+
     } catch (error) {
         console.log(error);
     }
@@ -170,31 +170,14 @@ export const loginUser = async (req, res) => {
 
 
 
-// Get user by email
-export const getUser = async (req, res) => {
+// Get LoggedIn user
+export const getLoggedInUser = async (req, res) => {
     try {
-        const { email } = req.body;
 
-        // Validate email format
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if (!emailRegex.test(email)) {
-            return res.status(400).json({
-                message: "Invalid email format",
-                success: false,
-            });
-        }
-
-        // Check if email is provided
-        if (!email) {
-            return res.status(400).json({
-                message: "Enter valid email",
-                success: false,
-            });
-        }
+        const userId=req.id;
 
         // Find the user by email
-        const user = await User.findOne({ email:email.toLowerCase() });
+        const user = await User.findOne({userId});
 
        
 
@@ -322,6 +305,8 @@ export const deleteLoggedInUser = async (req, res) => {
         return res.status(500).json({ message: "Server error", success: false });
     }
 };
+
+
 
 // Delete specific user by email
 export const deleteUserByEmail = async (req, res) => {
