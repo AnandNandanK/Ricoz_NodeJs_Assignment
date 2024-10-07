@@ -4,16 +4,24 @@ All endpoints are prefixed with /api/v1/user.
 
 FOR LOCAL_HOST API
 https://localhost:4000/api/v1/user/register
+
 https://localhost:4000/api/v1/user/login
+
 http://localhost:4000/api/v1/user/update
+
 http://localhost:4000/api/v1/user/delete
+
 http://localhost:4000/api/v1/user/deletebyemail
 
 FOR Render API
 https://ricoz-nodejs-assignment.onrender.com/api/v1/user/register
+
 https://ricoz-nodejs-assignment.onrender.com/api/v1/user/login
+
 http://ricoz-nodejs-assignment.onrender.com/api/v1/user/update
+
 http://ricoz-nodejs-assignment.onrender.com/api/v1/user/delete
+
 http://ricoz-nodejs-assignment.onrender.com/api/v1/user/deletebyemail
 
 Endpoints
