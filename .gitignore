@@ -1,5 +1,0 @@
-
-# we can hide .env and node_modules file or any other sensitive data by adding file or folder here
-
-# .env
-# /node_modules 
